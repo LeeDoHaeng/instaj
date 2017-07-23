@@ -1,4 +1,22 @@
 body {
   background-color: #fafafa;
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+}
+
+main {
+  animation: .5s popIn ease-out;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
 }
