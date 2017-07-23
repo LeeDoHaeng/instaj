@@ -1,26 +1,23 @@
-var weapons = ["sword", "spear", "bomb"];
+$(document).ready(function() {
+  var $heart = $(".heart"),
+    $ellipsis = $(".fa-ellipsis-h"),
+    $overlay = $(".overlay"),
+    $close = $(".fa-times"),
+    $cancel = $("#cancel");
 
-var soldier = {
-  name: "justin",
-  age: 21,
-  korean: true,
-  weapon: weapons[0],
-  sayHi: function(name){
-    console. log("hello" + name);
+  $heart.click(function() {
+    $(this).toggleClass("fa-heart-o heart-pumping fa-heart");
+  });
+
+  $ellipsis.click(function() {
+    $overlay.fadeIn(500);
+  });
+
+  $close.click(closePopUp);
+  $cancel.click(closePopUp);
+
+  function closePopUp(event) {
+    event.preventDefault();
+    $overlay.fadeOut(500);
   }
-};
-
-var age = prompt("How old are you?");
-
-if(age < 18) {
-  console. log("gtfo");
-}
-else if(age > 18 && age <50){
-  console. log("you're a father");
-}
-else if(age > 50 && age < 80){
-  console. log("hello granpa");
-}
-else{
-  console. log("u r dead");
-}
+});
